@@ -12,6 +12,12 @@ public class Account {
     private Integer id;
 
     private String name;
+
+    private Account() {}
+
+    public Account(String name) {
+        setName(name);
+    }
     
     public Integer getId() {
         return id;
