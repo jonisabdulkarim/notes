@@ -1,0 +1,9 @@
+.vscode/
+.settings/
+
+.classpath
+.project
+.factorypath
+notes
+
+*.properties
