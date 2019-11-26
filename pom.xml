@@ -2,16 +2,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
+  <!-- Project info -->
   <groupId>com.camper</groupId>
   <artifactId>demo</artifactId>
   <version>0.1.0</version>
 
+  <!-- Inherit Spring-Boot pom -->
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.2.1.RELEASE</version>
+    <relativePath/>
   </parent>
 
+  <!-- Specifies Java version -->
+  <properties>
+    <java.version>13</java.version>
+  </properties>
+
+  <!-- Lists all the dependencies -->
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -20,14 +29,12 @@
     
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
+      <artifactId>spring-boot-starter-data-rest</artifactId>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
-      <scope>compile</scope>
     </dependency>
     
     <dependency>
@@ -35,11 +42,13 @@
       <artifactId>postgresql</artifactId>
       <scope>runtime</scope>
     </dependency>
-  </dependencies>
 
-  <properties>
-    <java.version>13</java.version>
-  </properties>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
   
   <build>
     <plugins>
