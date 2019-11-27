@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
-public class Controller {
+public class IndexController {
 
     private final AtomicLong counter = new AtomicLong();
     private static final String template = "Welcome back, %s!%n";
