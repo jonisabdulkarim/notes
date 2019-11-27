@@ -1,8 +1,7 @@
 class AccountData extends React.Component {
     render() {
-        const accounts = this.props.accounts.map(accounts => 
-            <Account key = {accounts._links.self.href} 
-            employee = {employee} />
+        const accounts = this.props.accounts.map(account => 
+            <Account key={account._links.self.href} account={account} />
         );
 
         return (

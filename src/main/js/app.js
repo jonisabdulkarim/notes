@@ -8,11 +8,18 @@ class App extends React.Component {
         this.state = {accounts: []};
     }
 
-    // TODO: write componentDidMount()
+    componentDidMount() {
+        fetch("http://localhost:8080/api")
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({ accounts: data })
+        })
+        .catch(console.log)
+    }
 
     render() {
         return (
-            <AccountList accounts={this.state.accounts}/>
+            <AccountData accounts={this.state.accounts}/>
         )
     }
 }
