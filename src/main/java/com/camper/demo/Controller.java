@@ -15,7 +15,7 @@ public class Controller {
 
     @GetMapping("/")
     public String index() {
-        return "Welcome to the index page!\n";
+        return "index";
     }
 
     @PostMapping("/")

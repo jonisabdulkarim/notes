@@ -1,0 +1,26 @@
+{
+    "name": "demo",
+    "version": "0.1.0",
+    "description": "A web API that lets you write notes with priorities",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jonisabdulkarim/notes.git"
+    },
+    "license": "UNLICENSED",
+    "dependencies": {
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "rest": "^2.0.0"
+    },
+    "scripts": {
+        "watch": "webpack --watch -d"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/preset-env": "^7.7.4",
+        "@babel/preset-react": "^7.7.4",
+        "babel-loader": "^8.0.6",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+    }
+}

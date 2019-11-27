@@ -1,10 +1,13 @@
-.vscode/**
-.settings/**
-target/
-
+.vscode/
+.settings/
 .classpath
 .project
 .factorypath
 notes
 
+node_modules/
+target/
 *.properties
+package-lock.json
+bundle.js
+bundle.js.map
