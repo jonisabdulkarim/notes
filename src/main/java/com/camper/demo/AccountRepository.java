@@ -1,7 +1,7 @@
 package com.camper.demo;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface AccountRepository extends CrudRepository<Account, Integer> {
+public interface AccountRepository extends PagingAndSortingRepository<Account, Integer> {
 
 }
