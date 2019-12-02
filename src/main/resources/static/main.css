@@ -2,3 +2,7 @@ body {
     background-color: #3e4444;
     color: #88B04B;
 }
+
+div {
+    display: flex;
+}
