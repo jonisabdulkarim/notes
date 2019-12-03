@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { finished } from 'stream';
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
+        this.root = "/api";
         this.state = {
             accounts: [],
             notes: []
@@ -12,17 +14,46 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/api/accounts")
+        this.loadFromServer(this.state.pageSize);
+    }
+
+    
+    loadFromServer(pageSize) {
+        // fetch "account" relation
+        var request = new Request(this.root + "/accounts", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        fetch(request)
         .then(res => res.json())
         .then((data) => {
-            this.setState({ accounts: data._embedded.accounts })
+            this.setState({
+                accounts: data._embedded.accounts,
+                pageSize: pageSize,
+                links: data._links
+            })
         })
         .catch(console.log);
 
-        fetch("http://localhost:8080/api/notes")
+        // fetch "notes" relation
+        var request = new Request(this.root + "/notes", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        fetch(request)
         .then(res => res.json())
         .then((data) => {
-            this.setState({ notes: data._embedded.notes})
+            this.setState({
+                accounts: data._embedded.notes,
+                pageSize: pageSize,
+                links: data._links
+            })
         })
         .catch(console.log);
     }
